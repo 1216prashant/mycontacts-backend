@@ -30,7 +30,7 @@ const registerUser = asyncHandler(async (req, res) => {
   });
   console.log(`User Created: ${user}`);
   if (user) {
-    res.status(201).json({ _id: user.id, email: user.email });
+    res.status(201).json({message:"Register Success", _id: user.id, email: user.email });
   } else {
     res.status(400);
     throw new Error("User Data Not Valid. User Registration Failed.");
