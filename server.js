@@ -12,8 +12,9 @@ app.listen(PORT,()=>{
     console.log(`This is express server running on PORT:${PORT} `)
 })
 
+app.use(cors())
 app.use(express.json()); // to use json format in response
-app.use(cors("/api/contacts", require("./routes/contactRoutes"))) // routes for contact
-app.use(cors("/api/users", require("./routes/userRoutes"))) // routes for user registration & login
+app.use("/api/contacts", require("./routes/contactRoutes")) // routes for contact
+app.use("/api/users", require("./routes/userRoutes")) // routes for user registration & login
 app.use(errorHandler) // for error handling of the API's
 
